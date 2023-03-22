@@ -1,0 +1,361 @@
+:root {
+  --black: rgb(14, 14, 14);
+  --white: #f0f0f0;
+  --green: #98a886;
+  --dark-green: #465c69;
+  --light-green: #abc4a1;
+  --brown: #c4a69d;
+  --dark-grey: #f0f0f0;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* NAVIGATION*************************************************************************** */
+nav {
+  width: 100%;
+  background-color: var(--dark-green);
+  position: fixed;
+  z-index: 2000;
+  padding-top: 0.2em;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+footer {
+  margin-top: auto;
+  background-color: var(--black);
+}
+
+.move-nav {
+  transition: 200ms ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px;
+}
+.logo {
+  margin: 0 auto;
+}
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+.nav-items {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+}
+.nav-list {
+  line-height: 3em;
+}
+/* to make the nav come in and out. max height so I can add a transition */
+.invisible-nav {
+  max-height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, max-height 250ms, opacity 500ms ease-in-out;
+}
+.visible-nav {
+  max-height: 500px;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, max-height 500ms, opacity 500ms ease-in-out;
+}
+
+.nav-items a {
+  font-size: 21px;
+  color: var(--white);
+}
+.nav-items a:hover {
+  transition: 300ms ease-in-out;
+  text-decoration: underline var(--white);
+}
+.hamburger {
+  position: absolute;
+  left: 0.6em;
+  font-size: 1.5em;
+}
+.fa-bars {
+  color: var(--white);
+  height: 100%;
+}
+/* HEADER****************************************************************************************************************************************************************************************************************************************** */
+header {
+}
+/* slide show */
+.carousel {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.carousel > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
+}
+
+.slide > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slide[data-active] {
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0ms;
+}
+
+.carousel-button {
+  position: absolute;
+  z-index: 2;
+  background: none;
+  border: none;
+  font-size: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  border-radius: 0.25rem;
+  padding: 0 0.5rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button:focus {
+  outline: 1px solid black;
+}
+.carousel-button.prev {
+  left: 1rem;
+}
+
+.carousel-button.next {
+  right: 1rem;
+}
+/* TO STYLE THE CONTENT BOXES********************************************************************************************************************************************************************************************
+*/
+.main-content {
+  background-color: var(--white);
+  text-align: center;
+  padding: 2em 1em 7em 1em;
+  color: var(--white);
+}
+.fa-bars {
+  fill: #c4a69d;
+}
+.content-box {
+  background-color: var(--light-green);
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 15px;
+}
+/* SIGN IN AND SIGN UP************************************************************************************************************************************************************************************************ */
+.sign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.sign form {
+  display: flex;
+  flex-direction: column;
+  color: var(--dark-green);
+  border-radius: 20px;
+  padding: 3em 1.5em;
+  max-width: 30em;
+  margin: 0 auto;
+  box-shadow: var(--dark-green) 0px 1px 4px, var(--dark-green) 0px 0px 0px 3px;
+}
+.sign h1,
+.sign h2,
+.sign a {
+  color: var(--dark-green);
+  text-align: center;
+  margin-bottom: 1em;
+}
+.sign input {
+  padding: 1em;
+  width: 100%;
+  color: var(--dark-green);
+  font-size: 1em;
+  margin-bottom: 1em;
+  background-color: inherit;
+  outline: white;
+  outline-style: groove;
+  border: none;
+}
+.sign textarea {
+  padding: 1em;
+  font-size: 1em;
+}
+.sign input::placeholder,
+.sign textarea::placeholder {
+  color: var(--dark-green);
+}
+
+/* REVIEWS SECTION******************************************************************************************************************************************************************************************* */
+
+.reviews {
+  display: grid;
+  gap: 2em;
+  place-items: center;
+  text-align: center;
+  padding: 2em;
+}
+.team-intro {
+  text-align: center;
+  padding-top: 1em;
+}
+.review-card {
+  max-width: 15em;
+  min-height: 15em;
+  padding: 0em;
+  background-color: var(--white);
+}
+.review-card img {
+  max-width: 100%;
+  min-height: 60%;
+  display: block;
+  object-fit: cover;
+}
+.review-card p {
+  padding: 0.7em;
+}
+/* FEATURES PAGE ************************************************************************************************************************************************************************************************** */
+.features-card {
+  width: 100%;
+  background-color: var(--dark-grey);
+}
+
+.feature-heading {
+  text-align: center;
+  margin-bottom: 0.5em;
+  padding-top: 4em;
+}
+.features {
+  display: grid;
+  gap: 1em;
+  text-align: center;
+}
+.feature {
+  background-color: var(--yellow);
+  padding: 1em;
+  border-radius: 15px;
+}
+.rules {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.rules-list li {
+  list-style-type: disc;
+}
+.rules h2 {
+  margin: 2em auto;
+}
+
+/* PRIVACY POLICY**********************************************************************************************8 */
+.privacy-policy {
+  margin-top: 6em;
+}
+.privacy-policy ul {
+  list-style-type: decimal;
+}
+
+/* ATTRACTIONS PAGE ************************************************************************************************************************************************************************************************** */
+.attractions-content {
+  margin-top: 6em;
+}
+
+.attraction {
+  background-color: var(--dark-grey);
+  display: flex;
+  flex-direction: column;
+  margin-top: 3em;
+}
+.attraction-img {
+  /* min-width: 20em; */
+  min-height: 12em;
+  background: url(https://images.pexels.com/photos/2091351/pexels-photo-2091351.jpeg?auto=compress&cs=tinysrgb&w=600);
+  background-size: cover;
+  background-position: center;
+}
+.attraction-img img {
+  max-width: 100%;
+}
+.attraction-details {
+  /* padding: 1em; */
+}
+
+/* FOOTER******************************************************************************************************************************************************************************************************************************************************************************************* */
+footer {
+  margin-top: 3em;
+  padding: 1em;
+  background-color: var(--dark-green);
+}
+footer a {
+  color: var(--white);
+  text-decoration: underline;
+}
+footer p {
+  color: var(--white);
+}
+/* MEDIA QUERIES*************************************************************************************************************************************************************************************** */
+@media (min-width: 768px) {
+  .reviews {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5em;
+  }
+  .features {
+    padding: 2em;
+    gap: 2.5em;
+    font-size: larger;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .camp-rules {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10em;
+  }
+  .features-card i,
+  .rules i,
+  .rules li {
+    font-size: x-large;
+    text-align: center;
+  }
+}
