@@ -298,6 +298,9 @@ header {
 .attractions-content {
   margin-top: 6em;
 }
+.attractions-content h2 {
+  text-align: center;
+}
 
 .attraction {
   background-color: var(--dark-grey);
@@ -306,17 +309,45 @@ header {
   margin-top: 3em;
 }
 .attraction-img {
-  /* min-width: 20em; */
-  min-height: 12em;
-  background: url(https://images.pexels.com/photos/2091351/pexels-photo-2091351.jpeg?auto=compress&cs=tinysrgb&w=600);
-  background-size: cover;
-  background-position: center;
+  position: relative;
 }
+.attraction-img::after {
+  content: 'Hi';
+  color: white;
+  position: absolute;
+  padding: 0.7em;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+}
+.one::after {
+  content: 'BEAUTIFUL LAKES';
+}
+.two::after {
+  content: 'NEAT CAMPSITES';
+}
+.three::after {
+  content: 'AMAZING BIKE TRAILS';
+}
+.four::after {
+  content: 'BEAUTIFUL WILDLIFE';
+}
+
 .attraction-img img {
   max-width: 100%;
 }
 .attraction-details {
-  /* padding: 1em; */
+  padding: 1em;
+}
+.attraction button {
+  background: var(--green);
+  padding: 0.7em;
+  border: none;
+  border-radius: 0.4em;
+  outline: transparent;
+  color: var(--white);
 }
 
 /* FOOTER******************************************************************************************************************************************************************************************************************************************************************************************* */
@@ -357,5 +388,20 @@ footer p {
   .rules li {
     font-size: x-large;
     text-align: center;
+  }
+}
+
+@media (min-width: 990px) {
+  /* attractions */
+  .attraction {
+    display: flex;
+    flex-direction: row;
+  }
+  .attraction-img {
+    min-height: 100%;
+    min-width: 23em;
+  }
+  .attraction-img img {
+    height: 100%;
   }
 }
