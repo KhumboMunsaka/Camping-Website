@@ -296,24 +296,29 @@ header {
   list-style-type: decimal;
 }
 
-/* ATTRACTIONS PAGE ************************************************************************************************************************************************************************************************** */
-.attractions-content {
+/* ATTRACTIONS PAGE AND PITCH TYPE STYLING! ************************************************************************************************************************************************************************************************** */
+.attractions-content,
+.pitches-content {
   margin-top: 6em;
 }
-.attractions-content h2 {
+.attractions-content h2,
+.pitches-content h2 {
   text-align: center;
 }
 
-.attraction {
+.attraction,
+.pitch-type {
   background-color: var(--dark-grey);
   display: flex;
   flex-direction: column;
   margin-top: 3em;
 }
-.attraction-img {
+.attraction-img,
+.pitch-type-img {
   position: relative;
 }
-.attraction-img::after {
+.attraction-img::after,
+.pitch-type-img::after {
   content: 'Hi';
   color: white;
   position: absolute;
@@ -336,14 +341,30 @@ header {
 .four::after {
   content: 'BEAUTIFUL WILDLIFE';
 }
+/* to style the pitch types names on IMG */
+.pitch-one::after {
+  content: 'Caravan Pitches';
+}
+.pitch-two::after {
+  content: 'Seasonal Pitches';
+}
 
-.attraction-img img {
+.pitch-three::after {
+  content: 'Tent Pitches';
+}
+.pitch-four::after {
+  content: 'Group Pitches';
+}
+.attraction-img img,
+.pitch-type-img img {
   max-width: 100%;
 }
-.attraction-details {
+.attraction-details,
+.pitch-type-details {
   padding: 1em;
 }
-.attraction button {
+.attraction button,
+.pitch-type button {
   background: var(--green);
   padding: 0.7em;
   border: none;
@@ -395,15 +416,18 @@ footer p {
 
 @media (min-width: 990px) {
   /* attractions */
-  .attraction {
+  .attraction,
+  .pitch-type {
     display: flex;
     flex-direction: row;
   }
-  .attraction-img {
+  .attraction-img,
+  .pitch-type-img {
     min-height: 100%;
     min-width: 23em;
   }
-  .attraction-img img {
+  .attraction-img img,
+  .pitch-type-img .bg-img {
     height: 100%;
   }
 }
