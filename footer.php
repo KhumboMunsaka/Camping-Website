@@ -1,6 +1,7 @@
  </body>
   
      <footer class="fixed_footer">
+   
       <div class="container">
         <div class="footer-content">
           <div class="footer-link">

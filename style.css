@@ -412,6 +412,7 @@ footer {
   padding: 1em;
   background-color: var(--dark-green);
 }
+
 footer a {
   color: var(--white);
   text-decoration: underline;
@@ -419,7 +420,10 @@ footer a {
 footer p {
   color: var(--white);
 }
-/* MEDIA QUERIES*************************************************************************************************************************************************************************************** */
+footer p {
+  color: var(--white);
+}
+/* MEDIA QUERIES******************************************************************************************************************************************************
 @media (min-width: 768px) {
   .reviews {
     display: flex;
@@ -446,9 +450,9 @@ footer p {
     text-align: center;
   }
 }
-
 @media (min-width: 990px) {
-  /* attractions */
+  
+@media (min-widt
   .attraction,
   .pitch-type {
     display: flex;
