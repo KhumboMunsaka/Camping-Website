@@ -377,6 +377,26 @@ header {
 .search-page {
   margin-top: 5em;
 }
+.search form {
+  text-align: center;
+}
+.search-page input,
+.search-page button {
+  padding: 0.8em 0.8em 0.8em 0.8em;
+  width: clamp(10vw, 20em, 100vw);
+  /* width: 100%; */
+  color: var(--dark-green);
+  font-size: 1em;
+  margin-bottom: 1em;
+  background-color: inherit;
+  outline: white;
+  /* outline-style: groove; */
+  /* border: none; */
+}
+.search-page button {
+  background-color: var(--dark-green);
+  color: var(--white);
+}
 
 /* FOOTER******************************************************************************************************************************************************************************************************************************************************************************************* */
 footer {

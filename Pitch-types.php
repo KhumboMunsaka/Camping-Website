@@ -2,9 +2,12 @@
 <main>
     <div class="container search-page">
         <div class="search">
-            <h1>f hdskfhsadklfjklsdfjkldsafj;askldjflkadsfa</h1>
-            <input type="search" name="search" id="search">
-            <button type="submit">Search for Available Pitches!</button>
+            <form action="">
+
+                <h1>Search Availability</h1>
+                <input type="search" name="search" id="search" placeholder="Search for Available Pitches!">
+                <button type="submit">SEARCH</button>
+            </form>
         </div>
     </div>
 </main>
