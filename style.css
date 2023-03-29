@@ -1,7 +1,10 @@
 :root {
   --black: rgb(14, 14, 14);
   --white: #f0f0f0;
-  --green: #98a886;
+  --green: #589600;
+  --golden: #dbd10b;
+  --orange: #f27b00;
+  --red: #e8004c;
   --dark-green: #465c69;
   --light-green: #abc4a1;
   --brown: #c4a69d;
@@ -300,6 +303,7 @@ header {
 .attractions-content,
 .pitches-content {
   margin-top: 6em;
+  margin-bottom: 6em;
 }
 .attractions-content h2,
 .pitches-content h2 {
@@ -396,6 +400,11 @@ header {
 .search-page button {
   background-color: var(--dark-green);
   color: var(--white);
+  transition: 100ms;
+}
+.search-page button:hover,
+.search-page button:focus {
+  transform: translateY(-5px);
 }
 
 /* FOOTER******************************************************************************************************************************************************************************************************************************************************************************************* */
