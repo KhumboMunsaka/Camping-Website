@@ -34,3 +34,38 @@ buttons.forEach((button) => {
     delete activeSlide.dataset.active;
   });
 });
+
+// FORM VALIDATION **********************************************************************************************************************************************************************************************8
+
+const firstname = document.querySelector('.firstname');
+const lastname = document.querySelector('.lastname');
+const password = document.querySelector('.password');
+const email = document.querySelector('.email');
+const phoneNumber = document.querySelector('.number');
+const form = document.querySelector('.form');
+const error = document.querySelector('.error');
+const errorHide = document.querySelector('.error-hide');
+const errorShow = document.querySelector('.error-show');
+
+form.addEventListener('submit', (e) => {
+  // to check if the fields are empty
+  // e.preventDefault();
+
+  if (
+    firstname.value === '' ||
+    lastname.value === '' ||
+    email.value === '' ||
+    phoneNumber.value === '' ||
+    password.value === ''
+  ) {
+    // error.classList.replace('error-hide', 'error-show');
+    // error.classList.replace('error-show', 'error-error');
+    e.preventDefault();
+
+    error.classList.toggle('error-show');
+    error.classList.toggle('error-hide');
+    return;
+  } else {
+    !e.preventDefault();
+  }
+});

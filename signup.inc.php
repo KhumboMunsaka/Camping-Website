@@ -1,43 +1,6 @@
   <?php 
  include "dbh.inc.php";
  include 'nav.php';?>
-    <?php 
-    // <!--  ERR0R HANDLING********************************************************************** -->
-if(isset($_POST['submit'])) {
-include_once 'dbh.inc.php;';
- $first = $_POST['firstname'];
- $last = $_POST['lastname'];
- $email = $_POST['email'];
- $number = $_POST['number'];
- $password = $_POST['password'];
-
-
-
-if(empty($first) || empty($last)|| empty($email)||empty($number)|| empty($password)) {
-// header("Location:  signup.inc.php?signup=empty!");
-        header("Location: sign-up.php?signup=empty");
-
-exit();
-}
-else 
-{
-    // to check if email is valid
-    if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        header("Location: sign-up.php?invalid email!");
-    }
-    else {
-   header("Location: sign-up.php?signup=error");
-
-   exit();
-
-    }
-    
-};
-} else {
-   header("Location: sign-up.php?signup=error");
-
-exit();
-};?>
 
  <?php
  $first = mysqli_real_escape_string($conn,$_POST['firstname'] );
