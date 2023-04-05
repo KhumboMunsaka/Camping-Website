@@ -49,9 +49,14 @@ include "dbh.inc.php";
             <div class="g-recaptcha" data-sitekey="6LdLpFkSAAAAAED9ou3vq3yopKj2z1fPAqF8TJq3"></div>
 
             <button type="submit" name="submit">submit</button>
+            <?php        
+            ?>
+
           </form>
         </div>
       </main>
-
+<?php 
+// if(isset)
+?>
 
  <?php include 'footer.php'; ?>

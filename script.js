@@ -46,6 +46,8 @@ const form = document.querySelector('.form');
 const error = document.querySelector('.error');
 const errorHide = document.querySelector('.error-hide');
 const errorShow = document.querySelector('.error-show');
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// email validation
 
 form.addEventListener('submit', (e) => {
   // to check if the fields are empty
@@ -66,6 +68,6 @@ form.addEventListener('submit', (e) => {
     error.classList.toggle('error-hide');
     return;
   } else {
-    !e.preventDefault();
+    this.unbind('submit').submit();
   }
 });

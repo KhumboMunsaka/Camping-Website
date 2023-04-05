@@ -3,20 +3,24 @@
  include 'nav.php';?>
 
  <?php
+
+
+
+// code to send this to the database
  $first = mysqli_real_escape_string($conn,$_POST['firstname'] );
  $last = mysqli_real_escape_string($conn,$_POST['lastname']);
  $email = mysqli_real_escape_string($conn,$_POST['email']);
  $number = mysqli_real_escape_string($conn,$_POST['phone_number']);
  $password = mysqli_real_escape_string($conn,$_POST['password']);
+
+
+
+$sql = "INSERT INTO users(first_name, last_name, email_address, phone_number, password) VALUES ('$first','$last','$email','$number','$password');";
+mysqli_query($conn, $sql);
  
  
+ header("Location: sign-up.php?signUp=success");
  
- 
- $sql = "INSERT INTO users(first_name, last_name, email_address, phone_number, password) VALUES ('$first','$last','$email','$number','$password');";
- mysqli_query($conn, $sql);
- 
- 
- // header("Location: sign-up.php?signUp=success");
  ?>
     
  
