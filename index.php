@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
  include "dbh.inc.php";
  ?>
 
@@ -32,4 +32,4 @@
 
   
 </body>
-</html>
+</html> -->
