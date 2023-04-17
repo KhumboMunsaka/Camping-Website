@@ -3,7 +3,7 @@
       <main class="sign">
         <div class="container ">
             <h1>Welcome Back!</h1>
-          <form action="" method="post">
+          <form action="/includes/signup.inc.php" method="post">
             <h2>Sign In</h2>
             <input
               type="email"
