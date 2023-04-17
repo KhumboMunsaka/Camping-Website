@@ -24,10 +24,10 @@ if (invalidEmail($email) !==false) {
    exit();
 }
 
-if (invalidNumber($number) !==false) {
-    header("location: ../sign-up.php?error=invalidnumber");
-   exit();
-}
+// if (invalidNumber($number) !==false) {
+//     header("location: ../sign-up.php?error=invalidnumber");
+//    exit();
+// }
 
 if (emailExists($conn, $email) !==false) {
     header("location: ../sign-up.php?error=emailaddressalreadyexists!");
