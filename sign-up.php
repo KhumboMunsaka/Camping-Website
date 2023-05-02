@@ -1,6 +1,8 @@
 <?php include 'nav.php'; 
-include '/includes/signup.inc.php'
+include "../includes/signup.inc.php";
 ?>
+
+
 
       <main class="sign">
         <div class="container ">
@@ -57,4 +59,5 @@ include '/includes/signup.inc.php'
       </main>
 
 
- <?php include 'footer.php'; ?>
+ <?php include 'footer.php'; 
+ ?>
