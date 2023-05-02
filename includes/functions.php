@@ -48,7 +48,9 @@ mysqli_stmt_close($stmt);
 
 // to register a new user
 function createUser($conn, $firstname, $lastname, $email, $number, $password) {
-$sql = 'insert into users (first_name, last_name, email, phone_number, password) values (?,?,?,?,?);?';;
+    $sql = 'INSERT INTO users (firstname, lastname, email, phone_number, password) VALUES (?, ?, ?, ?, ?)';
+
+// $sql = 'insert into users (first_name, last_name, email, phone_number, password) values (?,?,?,?,?);?';;
 $stmt = mysqli_stmt_init($conn);
 
 if (!mysqli_stmt_prepare($stmt, $sql)) {
