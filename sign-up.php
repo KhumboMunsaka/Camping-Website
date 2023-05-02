@@ -1,13 +1,10 @@
 <?php include 'nav.php'; 
-include "../includes/signup.inc.php";
+include '/includes/signup.inc.php'
 ?>
-
-
-
       <main class="sign">
         <div class="container ">
             <h1>Sign Up To Our Page</h1>
-          <form action="" method="post" class="form">
+          <form action="" method="post" class="fborm">
             <h2>Sign Up</h2>
             <p class='error error-hide'>You have not filled in all the fields</p>
             <input
