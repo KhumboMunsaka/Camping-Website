@@ -1,5 +1,5 @@
 <?php include 'nav.php'; 
-include '/includes/signup.inc.php'
+require __DIR__. '/includes/signup.inc.php';
 ?>
       <main class="sign">
         <div class="container ">
