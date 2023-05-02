@@ -6,7 +6,7 @@
       <p>Experience the ultimate outdoor adventure with our top-quality camping and swimming facilities</p>
     </div>
     <div class="cta">
-      <button id="cta1"><a href="includes/dbh.inc.php">slfkjlfS</a></button>
+      <button id="cta1"><a href="Information.php">BOOK A PITCH NOW</a></button>
       <button id="cta2">BOOK POOL NOW</button>
       <label for="search">Search</label>
       <input type="search" name="search" id="search" placeholder="Search for available bookings!">
