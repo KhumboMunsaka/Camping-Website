@@ -127,8 +127,6 @@ footer {
   padding: 0.5em;
   margin-bottom: 0.7em;
 }
-.cta input::placeholder {
-}
 #cta1 {
   background-color: var(--orange);
 }

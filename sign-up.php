@@ -1,5 +1,5 @@
 <?php include 'nav.php'; 
-include "/includes/signup.inc.php";
+include '/includes/signup.inc.php'
 ?>
 
       <main class="sign">
