@@ -66,3 +66,38 @@ mysqli_stmt_close($stmt);
 header("location: ../sign-up.php?error=none");
    exit();
 }
+
+// FOR THE LOGIN PAGE****************************************************************************
+// to check if the inputs are empty
+function emptyInputLogin ($email,$password) {
+    $result = true;
+
+    if( empty($email)|| empty($password)) {
+    $result = true;
+    } else {
+        $result = false;
+    }
+    return $result;
+};
+     function loginUser($conn, $email, $pwd) {
+        $emailExists = emailExists($conn, $email);
+        
+        if ($emailExists === false) {
+             header('location: ../login.php?error=wronglogin');
+        exit();
+        }
+
+        $pwdHashed = $emailExists['password'];
+        $checkpwd = password_verify($pwd, $pwdHashed);
+
+        if ($checkpwd === false) {
+              header('location: ../login.php?error=wronglogin');
+              exit();
+        } else if ($checkpwd === false) {
+            session_start();
+            $_SESSION['UserID'] = $emailExists['password'];
+            $_SESSION['firstname'] = $emailExists['password'];
+               header('location: ../Home.php?success');
+              exit();
+        }
+     };
