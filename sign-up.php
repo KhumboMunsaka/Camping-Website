@@ -50,9 +50,29 @@ require __DIR__. '/includes/signup.inc.php';
             <button type="submit" name="submit">submit</button>
             <?php        
             ?>
+        <?php 
+// to display error messages
+if(isset($_GET['error'])) {
 
+if ($_GET['error']== 'emptyinput') {
+echo "<p>Please fill in all fields</p>";
+}
+
+else if ($_GET['error']=='invalidemail'){
+  echo "<p>Invalid Email</p>";
+}
+else if ($_GET['error']    =='emailaddressalreadyexists!'){
+  echo "<p>This Email address already exists in our database</p>";
+}
+else if ($_GET['error']=='none'){
+  echo "<p>You have signed up successfully</p>";
+}
+}
+
+?>
           </form>
         </div>
+
       </main>
 
 
