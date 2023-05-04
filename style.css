@@ -343,6 +343,21 @@ footer {
 }
 
 /* ATTRACTIONS PAGE AND PITCH TYPE STYLING! ************************************************************************************************************************************************************************************************** */
+.message {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  opacity: 2;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  max-width: 20em;
+  padding: 2em;
+  border-radius: 1em;
+}
+
 .attractions-content,
 .pitches-content {
   margin-top: 6em;
@@ -359,6 +374,7 @@ footer {
   display: flex;
   flex-direction: column;
   margin-top: 3em;
+  border-radius: 15px;
 }
 .attraction-img,
 .pitch-type-img {
@@ -413,7 +429,8 @@ footer {
   flex-direction: column;
 }
 .attraction button,
-.pitch-type input {
+.pitch-type input,
+.pitch-type button {
   background: var(--green);
   padding: 0.7em;
   border: none;
@@ -422,6 +439,9 @@ footer {
   color: var(--white);
   max-width: 10em;
 }
+/* MODAL WINDOW*******************************************
+/* -------------------------- */
+/* CLASSES TO MAKE MODAL WORK */
 
 /* search bar to search available stuff************************************************************************************************************************************************************************************************ */
 .search-page {

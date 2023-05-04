@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['submit'])) {
-  $email = $_POST["email"];
+  $firstname = $_POST["email"];
   $pwd  = $_POST["password"];
   require_once 'dbh.inc.php';
   require_once 'functions.php';
