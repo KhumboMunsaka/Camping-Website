@@ -36,5 +36,12 @@ buttons.forEach((button) => {
 });
 
 // modal window VALIDATION **********************************************************************************************************************************************************************************************8
+let menu = document.querySelector('#menu-btn');
+menu.onclick = () => {
+  menu.classList.toggle('fa-times');
+};
+window.onscroll = () => {
+  menu.classList.remove('fa-times');
+};
 
 

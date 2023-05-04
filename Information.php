@@ -9,13 +9,23 @@ if(isset($_POST['add_to_checkout'])) {
     $select_checkout = mysqli_query($conn, "select * from `checkout` where Pitch_name = '$Pitch_name'");
 
     if(mysqli_num_rows($select_checkout) > 0) {
-      $messages[] = 'This pitch is already booked. Please try later';
+      $message[] = 'This pitch is already booked. Please try later';
 
     } else {
         $insert_pitch = mysqli_query($conn, "insert into `checkout`(Pitch_name, Price) values('$Pitch_name', '$price')");
-        $messages[] = 'This Pitch has been added to the checkout Successfully';
+        $message[] = 'This Pitch has been added to the checkout Successfully';
     }
 }
+?>
+   
+<?php
+
+if(isset($message)){
+   foreach($message as $message){
+      echo '<div class="message"><span>'.$message.'</span> <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i> </div>';
+   };
+};
+
 ?>
  
 <main> 
@@ -40,11 +50,6 @@ if(isset($_POST['add_to_checkout'])) {
                     echo $item['Description'];
                     if (isset($_SESSION['UserID'])) {
                         echo '<input type="submit" class="btn" value="Add to Checkout" name="add_to_checkout">';
-                        if(isset($messages)) {
-                            foreach($messages as $message) {
-                                echo "<p>".$message ."</p>";
-                            }
-                        }
                     } else {
                         echo '<p>You must log in to book a pitch</p>';
                     }
