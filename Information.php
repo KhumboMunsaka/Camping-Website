@@ -2,24 +2,23 @@
 include 'includes/dbh.inc.php';?>
 
 <?php 
-if(isset($_POST['add_to_checkout'])) {
+if(isset($_POST['book_pitch'])) {
     $Pitch_name = $_POST['Pitch_name'];
     $price = $_POST['Price'];
     $booking_date = $_POST['date'];
-    $userID = $_SESSION['UserID'];
-    $useridfromdb = mysqli_query($conn, "select UserID from `users` where UserID = '$userID'");
-    // $userID = $_POST['UserID'];
+    $UserID = $_SESSION['UserID'];
 
 
+   
+    $select_checkout = mysqli_query($conn, "select * from `pitch_bookings` where Pitch_name = '$Pitch_name'");
 
-    $select_checkout = mysqli_query($conn, "select * from `checkout` where Pitch_name = '$Pitch_name'");
+    $select_date = mysqli_query($conn, "select * from `pitch_bookings` where booking_date = '$booking_date'");
 
     if(mysqli_num_rows($select_checkout) > 0) {
       $message[] = 'This pitch is already booked. Please try later';
-
     } else {
-        $insert_pitch = mysqli_query($conn, "insert into `checkout`(Pitch_name, Price, booking_date, UserID) values('$Pitch_name', '$price','$booking_date','$useridfromdb')");
-        $message[] = 'This Pitch has been added to the checkout Successfully';
+        $insert_pitch = mysqli_query($conn, "insert into `pitch_bookings`(Pitch_name, Price, booking_date, UserID) values('$Pitch_name', '$price','$booking_date','$UserID')");
+        $message[] = 'This Pitch has been booked Successfully';
     }
 }
 ?>
@@ -57,8 +56,7 @@ if(isset($message)){
                         echo '
                         <p>Set a date you would like to book</p>
                         <input type="date" name="date" id="date">
-                        <input type="submit" class="btn" value="Add to Checkout" name="add_to_checkout">';
-                        // echo $useridfromdb;
+                        <input type="submit" class="btn" value="Book Pitch" name="book_pitch">';
                     } else {
                         echo '<p class="notLogged">You must<a href="sign-in.php"> sign in </a> to  book a pitch</p>';
                     }
