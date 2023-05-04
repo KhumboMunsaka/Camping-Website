@@ -5,6 +5,12 @@ include 'includes/dbh.inc.php';?>
 if(isset($_POST['add_to_checkout'])) {
     $Pitch_name = $_POST['Pitch_name'];
     $price = $_POST['Price'];
+    $booking_date = $_POST['date'];
+    $userID = $_SESSION['UserID'];
+    $useridfromdb = mysqli_query($conn, "select UserID from `users` where UserID = '$userID'");
+    // $userID = $_POST['UserID'];
+
+
 
     $select_checkout = mysqli_query($conn, "select * from `checkout` where Pitch_name = '$Pitch_name'");
 
@@ -12,7 +18,7 @@ if(isset($_POST['add_to_checkout'])) {
       $message[] = 'This pitch is already booked. Please try later';
 
     } else {
-        $insert_pitch = mysqli_query($conn, "insert into `checkout`(Pitch_name, Price) values('$Pitch_name', '$price')");
+        $insert_pitch = mysqli_query($conn, "insert into `checkout`(Pitch_name, Price, booking_date, UserID) values('$Pitch_name', '$price','$booking_date','$useridfromdb')");
         $message[] = 'This Pitch has been added to the checkout Successfully';
     }
 }
@@ -36,7 +42,6 @@ if(isset($message)){
             $pitches = mysqli_fetch_all($result, MYSQLI_ASSOC);
         ?>
         <h2>CampSites Available!</h2>
-        
         <?php foreach($pitches as $item): ?>      
         <form action="" method="POST" >  
             <div class="pitch-type">    
@@ -49,9 +54,13 @@ if(isset($message)){
                     <?php 
                     echo $item['Description'];
                     if (isset($_SESSION['UserID'])) {
-                        echo '<input type="submit" class="btn" value="Add to Checkout" name="add_to_checkout">';
+                        echo '
+                        <p>Set a date you would like to book</p>
+                        <input type="date" name="date" id="date">
+                        <input type="submit" class="btn" value="Add to Checkout" name="add_to_checkout">';
+                        // echo $useridfromdb;
                     } else {
-                        echo '<p>You must log in to book a pitch</p>';
+                        echo '<p class="notLogged">You must<a href="sign-in.php"> sign in </a> to  book a pitch</p>';
                     }
                     ?>
                 </div>
