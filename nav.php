@@ -1,3 +1,8 @@
+<?php 
+session_start();
+include 'includes/dbh.inc.php'
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -33,8 +38,18 @@
           <li><a class="invisible-items" href="Information.php">INFORMATION</a></li>
           <li><a class="invisible-items" href="Pitch-types.php">PITCH-TYPES</a></li>
           <li><a class="invisible-items" href="Attractions.php">ATTRACTIONS</a></li>
-          <li><a class="invisible-items" href="sign-in.php">SIGN-IN</a></li>
-          <li><a class="invisible-items" href="sign-up.php">SIGN-UP</a></li>
+          <?php
+          if (isset($_SESSION['UserID'])) {
+           echo '<li><a class="invisible-items" href="includes/logout.inc.php">SIGN-OUT</a></li>';
+           echo '<li><a class="invisible-items" href="profile.php">PROFILE</a></li>';
+           echo '<li><a class="invisible-items" href="checkout.php">CHECK OUT</a></li>';
+          } else {
+             echo '<li><a class="invisible-items" href="sign-in.php">SIGN-IN</a></li>';
+           echo '<li><a class="invisible-items" href="sign-up.php">SIGN-UP</a></li>';
+          }
+          ?>
+          
+          
         </ul>
       </div>
     </nav>

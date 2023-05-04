@@ -390,17 +390,17 @@ footer {
 }
 /* to style the pitch types names on IMG */
 .pitch-one::after {
-  content: 'Caravan Pitches';
+  content: 'Pitches';
 }
 .pitch-two::after {
-  content: 'Seasonal Pitches';
+  content: 'Pitches';
 }
 
 .pitch-three::after {
-  content: 'Tent Pitches';
+  content: 'Pitches';
 }
 .pitch-four::after {
-  content: 'Group Pitches';
+  content: 'Pitches';
 }
 .attraction-img img,
 .pitch-type-img img {

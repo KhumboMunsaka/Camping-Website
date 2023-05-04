@@ -50,7 +50,6 @@ mysqli_stmt_close($stmt);
 function createUser($conn, $firstname, $lastname, $email, $number, $password) {
     $sql = 'INSERT INTO users (firstname, lastname, email, phone_number, password) VALUES (?, ?, ?, ?, ?)';
 
-// $sql = 'insert into users (first_name, last_name, email, phone_number, password) values (?,?,?,?,?);?';;
 $stmt = mysqli_stmt_init($conn);
 
 if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -79,11 +78,12 @@ function emptyInputLogin ($email,$password) {
     }
     return $result;
 };
-     function loginUser($conn, $email, $pwd) {
+
+   function loginUser($conn, $email, $firstname, $pwd) {
         $emailExists = emailExists($conn, $email);
         
         if ($emailExists === false) {
-             header('location: ../login.php?error=wronglogin');
+             header('location: ../sign-in.php?error=wronglogin');
         exit();
         }
 
@@ -91,13 +91,26 @@ function emptyInputLogin ($email,$password) {
         $checkpwd = password_verify($pwd, $pwdHashed);
 
         if ($checkpwd === false) {
-              header('location: ../login.php?error=wronglogin');
+              header('location: ../sign-in.php?error=wronglogin');
               exit();
-        } else if ($checkpwd === false) {
+        } else if ($checkpwd === true) {
             session_start();
             $_SESSION['UserID'] = $emailExists['password'];
-            $_SESSION['firstname'] = $emailExists['password'];
+            $_SESSION['firstname'] = $emailExists['firstname'];
                header('location: ../Home.php?success');
               exit();
-        }
+        }                                                                                                   
      };
+
+
+
+    //  BOOKING FUNCTIONS********************************************************************************
+//     function createBooking($conn, $firstname, $lastname, $email, $number, $password) {
+//     $sql = 'INSERT INTO users (firstname, lastname, email, phone_number, password) VALUES (?, ?, ?, ?, ?)';
+
+// $stmt = mysqli_stmt_init($conn);
+
+// if (!mysqli_stmt_prepare($stmt, $sql)) {
+//  header("location: ../sign-up.php");
+//    exit();
+// }
