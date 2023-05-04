@@ -102,15 +102,11 @@ function emptyInputLogin ($email,$password) {
         }                                                                                                   
      };
 
-
+//   booking_id INT NOT NULL AUTO_INCREMENT,
+//   pitch_id INT NOT NULL,
+//   user_id INT NOT NULL,
+//   booking_start_date DATE NOT NULL,
+//   booking_end_date DATE NOT NULL,
 
     //  BOOKING FUNCTIONS********************************************************************************
-//     function createBooking($conn, $firstname, $lastname, $email, $number, $password) {
-//     $sql = 'INSERT INTO users (firstname, lastname, email, phone_number, password) VALUES (?, ?, ?, ?, ?)';
-
-// $stmt = mysqli_stmt_init($conn);
-
-// if (!mysqli_stmt_prepare($stmt, $sql)) {
-//  header("location: ../sign-up.php");
-//    exit();
-// }
+   

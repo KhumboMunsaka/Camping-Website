@@ -409,15 +409,18 @@ footer {
 .attraction-details,
 .pitch-type-details {
   padding: 1em;
+  display: flex;
+  flex-direction: column;
 }
 .attraction button,
-.pitch-type button {
+.pitch-type input {
   background: var(--green);
   padding: 0.7em;
   border: none;
   border-radius: 0.4em;
   outline: transparent;
   color: var(--white);
+  max-width: 10em;
 }
 
 /* search bar to search available stuff************************************************************************************************************************************************************************************************ */
