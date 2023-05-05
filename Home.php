@@ -5,7 +5,9 @@
       <h1>GLOBAL WILD <span>SWIMMING</span> AND <span>CAMPING</span></h1>
       <p>Experience the ultimate outdoor adventure with our top-quality camping and swimming facilities</p>
         <?php
-
+if(isset($_SESSION['email'])) { 
+  echo "Welcome " . $_SESSION['firstname'];
+}
 
 
         ;?>

@@ -35,8 +35,8 @@ include 'includes/dbh.inc.php';
           <li><a class="invisible-items" href="Contact.php">CONTACT</a></li>
           <li><a class="invisible-items" href="Features.php">FEATURES</a></li>
           <li><a class="invisible-items" href="Reviews.php">REVIEWS</a></li>
-          <li><a class="invisible-items" href="Information.php">INFORMATION</a></li>
-          <li><a class="invisible-items" href="Pitch-types.php">PITCH-TYPES</a></li>
+          <li><a class="invisible-items" href="Information.php">PITCHES TO BOOK</a></li>
+          <li><a class="invisible-items" href="Pitch-types.php">SEARCH AVAILABILITY</a></li>
           <li><a class="invisible-items" href="Attractions.php">ATTRACTIONS</a></li>
           <?php
           if (isset($_SESSION['UserID'])) {
