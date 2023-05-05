@@ -42,7 +42,6 @@ return $row;
     $result = false;
     return $result;
 }
-
 mysqli_stmt_close($stmt);
 }
 
@@ -79,7 +78,7 @@ function emptyInputLogin ($email,$password) {
     return $result;
 };
 
-   function loginUser($conn, $email, $firstname, $pwd) {
+   function loginUser($conn, $email,  $pwd) {
         $emailExists = emailExists($conn, $email);
         
         if ($emailExists === false) {
@@ -95,18 +94,10 @@ function emptyInputLogin ($email,$password) {
               exit();
         } else if ($checkpwd === true) {
             session_start();
-            $_SESSION['UserID'] = $emailExists['password'];
+            $_SESSION['email'] = $emailExists['email'];
+            $_SESSION['UserID'] = $emailExists['UserID'];
             $_SESSION['firstname'] = $emailExists['firstname'];
                header('location: ../Home.php?success');
               exit();
-        }                                                                                                   
+        }        
      };
-
-//   booking_id INT NOT NULL AUTO_INCREMENT,
-//   pitch_id INT NOT NULL,
-//   user_id INT NOT NULL,
-//   booking_start_date DATE NOT NULL,
-//   booking_end_date DATE NOT NULL,
-
-    //  BOOKING FUNCTIONS********************************************************************************
-   

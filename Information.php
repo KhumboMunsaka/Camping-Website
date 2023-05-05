@@ -6,18 +6,14 @@ if(isset($_POST['book_pitch'])) {
     $Pitch_name = $_POST['Pitch_name'];
     $price = $_POST['Price'];
     $booking_date = $_POST['date'];
-    $UserID = $_SESSION['UserID'];
+    $email = $_SESSION['email'];
 
-
-   
     $select_checkout = mysqli_query($conn, "select * from `pitch_bookings` where Pitch_name = '$Pitch_name'");
-
-    $select_date = mysqli_query($conn, "select * from `pitch_bookings` where booking_date = '$booking_date'");
 
     if(mysqli_num_rows($select_checkout) > 0) {
       $message[] = 'This pitch is already booked. Please try later';
     } else {
-        $insert_pitch = mysqli_query($conn, "insert into `pitch_bookings`(Pitch_name, Price, booking_date, UserID) values('$Pitch_name', '$price','$booking_date','$UserID')");
+        $insert_pitch = mysqli_query($conn, "insert into `pitch_bookings`(Pitch_name, Price, booking_date, email) values('$Pitch_name', '$price','$booking_date','$email')");
         $message[] = 'This Pitch has been booked Successfully';
     }
 }
@@ -30,7 +26,6 @@ if(isset($message)){
       echo '<div class="message"><span>'.$message.'</span> <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i> </div>';
    };
 };
-
 ?>
  
 <main> 
@@ -52,11 +47,12 @@ if(isset($message)){
                     <input type="hidden" name="Price" value="<?php echo $item['Price'] ?>">
                     <?php 
                     echo $item['Description'];
-                    if (isset($_SESSION['UserID'])) {
+                    if (isset($_SESSION['UserID']) || isset($_SESSION['email'])) {
                         echo '
                         <p>Set a date you would like to book</p>
                         <input type="date" name="date" id="date">
                         <input type="submit" class="btn" value="Book Pitch" name="book_pitch">';
+                        echo var_dump($_SESSION['email']);
                     } else {
                         echo '<p class="notLogged">You must<a href="sign-in.php"> sign in </a> to  book a pitch</p>';
                     }
