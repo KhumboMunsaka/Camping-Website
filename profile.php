@@ -102,7 +102,7 @@ if(isset($_POST['delete_booking'])) {
     $Pitch_name = $_POST['Pitch_name'];
     $email = $_SESSION['email'];
     $delete = mysqli_query($conn, "DELETE FROM `pitch_bookings` WHERE email = '$email';");
-// $deleteresult = mysqli_query($conn, $delete);
+
  if ($delete) {
         $delete = true;
     } else {
@@ -110,7 +110,7 @@ if(isset($_POST['delete_booking'])) {
     }
     
     if ($delete) {
-        $message[] = 'Session deleted successfully!';
+        $message[] = 'Booking deleted successfully!';
     } else {
         $message[] = 'Error occurred while deleting session.';
     }
@@ -122,10 +122,19 @@ if(isset($_POST['delete_booking'])) {
 if(isset($_POST['cancel_session'])) {
     $email = $_SESSION['email'];
     $delete = mysqli_query($conn, "DELETE FROM `swim_sessions` WHERE email = '$email';");
-     $message[] = 'Session deleted successfully!'; 
-      foreach ($message as $message) {
-        echo '<div class="message"><span>'.$message.'</span> <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i> </div>';
+    
+     if ($delete) {
+        $delete = true;
+    } else {
+        $delete = false;
     }
+    
+    if ($delete) {
+        $message[] = 'Booking deleted successfully!';
+    } else {
+        $message[] = 'Error occurred while deleting session.';
+    }
+
 }
 ?>
 </main>
