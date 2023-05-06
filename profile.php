@@ -39,9 +39,12 @@
                     <img src="<?php echo $item['image_link']?>" alt="image of a lake">
                 </div>
                 <div class="pitch-type-details">
-                    <input type="hidden" name="Pitch_name" value="<?php echo $item['Pitch_name'] ?>">
-                    <?php 
-                    echo $item['Description'];
+                    <?php  echo $item['Description']; ?>
+                    <div class="details-button">
+                        <input type="hidden" name="Pitch_name" value="<?php echo $item['Pitch_name'] ?>">
+                        <?php 
+                       
+                    
                     if (isset($_SESSION['UserID']) || isset($_SESSION['email'])) {
                         echo '
                         <input type="submit" class="btn" value="Cancel Booking" name="delete_booking">';
@@ -51,6 +54,7 @@
                     }
                     ?>
                     <input type="date" name="booking_date" value="<?php echo $item['booking_date'] ?>">
+                     </div>
                 </div>
             </div>
         </form>

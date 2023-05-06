@@ -44,6 +44,22 @@ window.onscroll = () => {
   menu.classList.remove('fa-times');
 };
 
-
 // to disble the button until the date is picked
-const button = document.querySelector
+const button = document.querySelector('.btn');
+const date = document.querySelector('.date');
+
+const currentDate = new Date();
+
+date.addEventListener('input', function () {
+  const pickedDate = new Date(this.value);
+  console.log(pickedDate);
+  if (pickedDate < currentDate || pickedDate == null) {
+    // Date is in the past
+    button.classList.toggle('disabled');
+    // Perform additional actions if needed
+  } else {
+    // Date is in the future or today
+    button.classList.remove('disabled');
+    // Perform additional actions if needed
+  }
+});
