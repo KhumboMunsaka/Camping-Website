@@ -396,16 +396,7 @@ footer {
 .pitch-one::after {
   content: 'Pitches';
 }
-.pitch-two::after {
-  content: 'Pitches';
-}
 
-.pitch-three::after {
-  content: 'Pitches';
-}
-.pitch-four::after {
-  content: 'Pitches';
-}
 .attraction-img img,
 .pitch-type-img img {
   max-width: 100%;
