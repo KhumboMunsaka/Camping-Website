@@ -355,6 +355,10 @@ footer {
 .pitches-content h2 {
   text-align: center;
 }
+.booking-instruction {
+  font-weight: bold;
+  color: var(--green);
+}
 
 .attraction,
 .pitch-type {
@@ -407,6 +411,10 @@ footer {
   display: flex;
   flex-direction: column;
 }
+.details-button {
+  display: flex;
+  gap: 0.5em;
+}
 .attraction button,
 .pitch-type input,
 .pitch-type button {
@@ -418,6 +426,42 @@ footer {
   color: var(--white);
   max-width: 10em;
 }
+.availablity {
+  display: flex;
+  flex-wrap: wrap;
+}
+.message {
+  background-color: var(--blue);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  padding: 1.5rem 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.message span {
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.message i {
+  font-size: 2.5rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.message i:hover {
+  color: var(--red);
+}
+
 /* MODAL WINDOW*******************************************
 /* -------------------------- */
 /* CLASSES TO MAKE MODAL WORK */

@@ -1,25 +1,4 @@
 <?php include 'nav.php'; ?>
-<main> 
-    <div class="container attractions-content">
-        <h2>What To See At Our CampSites</h2>
-        <div class="attractions">
-<?php 
-if(isset($_POST['book_swim'])) {
-    $lake_name = $_POST['lake_name'];
-    $booking_date = $_POST['date'];
-    $email = $_SESSION['email'];
-
-    $select_checkout = mysqli_query($conn, "select * from `swim_sessions` where lake_name = '$lake_name'");
-
-    if(mysqli_num_rows($select_checkout) > 0) {
-      $message[] = 'This pitch is already booked. Please try later';
-    } else {
-        $insert_pitch = mysqli_query($conn, "insert into `pitch_bookings`(Pitch_name, Price, booking_date, email) values('$Pitch_name', '$price','$booking_date','$email')");
-        $message[] = 'This Pitch has been booked Successfully';
-    }
-}
-?>
-   
 <?php
 
 if(isset($message)){
@@ -28,6 +7,28 @@ if(isset($message)){
    };
 };
 ?>
+<main> 
+    <div class="container attractions-content">
+        <h2>What To See At Our CampSites</h2>
+        <div class="attractions">
+<?php 
+if(isset($_POST['book_swim'])) {
+    $lake_name = $_POST['lake_name'];
+    $session_time = $_POST['datetime-local'];
+    $email = $_SESSION['email'];
+
+    $select_checkout = mysqli_query($conn, "select * from `swim_sessions` where lake_name = '$lake_name'");
+
+    if(mysqli_num_rows($select_checkout) > 0) {
+      $message[] = 'This session is already booked. Please try later';
+    } else {
+        $insert_pitch = mysqli_query($conn, "insert into `swim_sessions`(session_time, lake_name, email) values('$session_time', '$lake_name','$email')");
+        $message[] = 'Session has been booked Successfully';
+    }
+}
+?>
+   
+
  <div class="container pitches-content">
         <?php 
             $sql = 'Select * from lakes';
@@ -44,12 +45,15 @@ if(isset($message)){
                 <div class="pitch-type-details">
                     <input type="hidden" name="lake_name" value="<?php echo $item['lake_name'] ?>">
                     <?php 
-                    echo $item['description'];
+                     echo $item['description'];
                     if (isset($_SESSION['UserID']) || isset($_SESSION['email'])) {
                         echo '
-                        <p>Set a date you would like to book</p>
+                        <p class="booking-instruction" >Set a date you would like to book</p>
+                        <div class="details-button">
                         <input type="datetime-local" name="datetime-local" id="">
-                        <input type="submit" class="btn" value="Book Session" name="book_swim">';
+                        <input type="submit" class="btn" value="Book Session" name="book_swim">
+                        </div>
+                        ';
                     } else {
                         echo '<p class="notLogged">You must<a href="sign-in.php"> sign in </a> to  book a swim session</p>';
                     }
