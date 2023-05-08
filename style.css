@@ -13,9 +13,7 @@
   --brown: #c4a69d;
   --dark-grey: #f0f0f0;
 }
-.disabled {
-  display: none;
-}
+
 .errMessage {
   color: var(--red);
 }

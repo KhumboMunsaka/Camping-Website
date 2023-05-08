@@ -52,7 +52,7 @@ if(isset($message)){
                         <p class="booking-instruction">Set a date you would like to book</p>
                         <div class="details-button">
                         <input type="date" name="date" id="date" class="date">
-                        <input type="submit" class="btn disabled" value="Book Pitch" name="book_pitch">
+                        <input type="submit" class="" value="Book Pitch" name="book_pitch">
                         </div>';
                     } else {
                         echo '<p class="notLogged">You must<a href="sign-in.php"> sign in </a> to  book a pitch</p>';
