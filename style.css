@@ -311,32 +311,6 @@ button:hover {
 }
 /* REVIEWS SECTION******************************************************************************************************************************************************************************************* */
 
-.reviews {
-  display: grid;
-  gap: 2em;
-  place-items: center;
-  text-align: center;
-  padding: 2em;
-}
-.team-intro {
-  text-align: center;
-  padding-top: 1em;
-}
-.review-card {
-  max-width: 15em;
-  min-height: 15em;
-  padding: 0em;
-  background-color: var(--white);
-}
-.review-card img {
-  max-width: 100%;
-  min-height: 60%;
-  display: block;
-  object-fit: cover;
-}
-.review-card p {
-  padding: 0.7em;
-}
 /* FEATURES PAGE ************************************************************************************************************************************************************************************************** */
 .features-card {
   width: 100%;
@@ -383,7 +357,8 @@ button:hover {
   color: var(--red);
 }
 .attractions-content,
-.pitches-content {
+.pitches-content,
+.review-intro {
   margin-top: 6em;
   margin-bottom: 6em;
 }
@@ -397,19 +372,23 @@ button:hover {
 }
 
 .attraction,
-.pitch-type {
+.pitch-type,
+.review {
   background-color: var(--dark-grey);
   display: flex;
   flex-direction: column;
   margin-top: 3em;
   border-radius: 15px;
+  margin-bottom: 3em;
 }
 .attraction-img,
-.pitch-type-img {
+.pitch-type-img,
+.review-img {
   position: relative;
 }
 .attraction-img::after,
-.pitch-type-img::after {
+.pitch-type-img::after,
+.review-img::after {
   content: 'Hi';
   color: white;
   position: absolute;
@@ -436,13 +415,18 @@ button:hover {
 .pitch-one::after {
   content: 'Pitches';
 }
+.review-one::after {
+  content: 'Review';
+}
 
 .attraction-img img,
-.pitch-type-img img {
+.pitch-type-img img,
+.review-img img {
   max-width: 100%;
 }
 .attraction-details,
-.pitch-type-details {
+.pitch-type-details,
+.review-details {
   padding: 1em;
   display: flex;
   flex-direction: column;

@@ -70,7 +70,9 @@ const countEl = document.getElementById('count');
 updateVisitCount();
 
 function updateVisitCount() {
-  fetch('https://api.countapi.xyz/update/florin-popcom/codepen/?amount=1')
+  fetch(
+    'https://api.countapi.xyz/create?namespace=http://localhost:3000/Home.php&value=42'
+  )
     .then((res) => res.json())
     .then((res) => {
       countEl.innerHTML = res.value;

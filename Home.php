@@ -113,7 +113,6 @@ rssfeed_cache = "70f5784a7da86bc03d28d8e5db57e1dc";
 
 <!-- end sw-rss-feed code -->
           <div class="content-box">
-            <i class="fa-solid fa-cart-shopping"></i>
            <p>This page was viewed</p>
 <h1 id="count">0</h1>
 <p>times</p>
