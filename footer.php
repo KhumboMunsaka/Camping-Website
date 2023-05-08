@@ -1,44 +1,49 @@
  </body>
-  
-     <footer class="fixed_footer">
-   
-      <div class="container">
+   <footer class="fixed_footer">
+      <div class=" footer-container">
         <div class="footer-content">
           <div class="footer-link">
-            <h5><a href="/Contact.php">Contact Us</a></h5>
-            <p>
-              Get In Touch With Us
-            </p>
+            <h4>Products</h4>
+            <a>Pitches</a>
+            <a>Sale Items</a>
+            <a>Merch</a>
           </div>
           <div class="footer-link">
-            <h5> <a href="#About" name="About">About Us</a></h5>
-            <p>
-              YellowQuip Ltd is Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. 
-            </p>
+            <h4>Legal Information</h4>
+            <a>Privacy Policy</a>
+            <a>Terms and Conditions</a>
+            <a>Shipping and Refunds</a>
+            <a>FAQs</a>
           </div>
           <div class="footer-link">
-            <h5> <a href="#">Pay Us A Visit</a> </h5>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad,
-              atque.
-            </p>
+            <h4>About Us</h4>
+            <a>Our Mission</a>
+            <a>Our History</a>
           </div>
+          <div class="footer-link">
+            <h4>Social Media</h4>
+            <div class="social-media">
+              <a><i class="fa-brands fa-facebook"></i></a>
+              <a><i class="fa-brands fa-instagram"></i></a>
+              <a><i class="fa-brands fa-pinterest"></i></a>
+              <a><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+          <form action="POST" class="newsletter">
+            <label for="newsletter"
+              >Sign Up For Our <span>Weekly Newsletter</span></label
+            >
+            <input 
+              type="email"
+              name="newsletter"
+              id="newsletter"
+              placeholder="Enter Your Email"
+            />
+            <button type="submit">SUBMIT</button>
+          </form>
         </div>
       </div>
-      
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-    </script>
-    <script>
-//       const navList = document.querySelector('.nav-list');
-// const toggle = document.querySelector('.hamburger');
-
-// toggle.addEventListener('click', function () {
-//   navList.classList.toggle('invisible-nav');
-//   navList.classList.toggle('visible-nav');
-// });
-    </script>
-  <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+  </body>
 </html>

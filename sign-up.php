@@ -47,7 +47,7 @@ require __DIR__. '/includes/signup.inc.php';
             />
             <div class="g-recaptcha" data-sitekey="6LdLpFkSAAAAAED9ou3vq3yopKj2z1fPAqF8TJq3"></div>
 
-            <button type="submit" name="submit">submit</button>
+            <button type="submit" name="submit">SUBMIT</button>
             <?php        
             ?>
         <?php 
@@ -55,17 +55,17 @@ require __DIR__. '/includes/signup.inc.php';
 if(isset($_GET['error'])) {
 
 if ($_GET['error']== 'emptyinput') {
-echo "<p>Please fill in all fields</p>";
+echo "<p class='errMessage' >Please fill in all fields</p>";
 }
 
 else if ($_GET['error']=='invalidemail'){
-  echo "<p>Invalid Email</p>";
+  echo "<p class='errMessage' >Invalid Email</p>";
 }
 else if ($_GET['error']    =='emailaddressalreadyexists!'){
-  echo "<p>This Email address already exists in our database</p>";
+  echo "<p class='errMessage'>This Email address already exists in our database</p>";
 }
 else if ($_GET['error']=='none'){
-  echo "<p>You have signed up successfully</p>";
+  echo "<p class='errMessage'>You have signed up successfully</p>";
 }
 }
 

@@ -1,5 +1,20 @@
 <?php include 'nav.php'; 
 require __DIR__. '/includes/login.inc.php';
+require __DIR__. '/includes/functions.php';
+
+if (!isset($_SESSION["login_attempts"])) {
+    $_SESSION["login_attempts"] = 0; // Initialize login_attempts if it doesn't exist
+}
+
+if (isset($_SESSION["locked"]))
+{
+    $difference = time() - $_SESSION["locked"];
+    if ($difference > 600)
+    {
+        unset($_SESSION["locked"]);
+        unset($_SESSION["login_attempts"]);
+    }
+}
 ?>
  <div class="bg-img bg-img-other">
       <main class="sign">
@@ -20,22 +35,26 @@ require __DIR__. '/includes/login.inc.php';
               placeholder="Please Enter Password "
             />
             <?php 
-            if(isset($_GET['error'])) { 
-              
+            if($_SESSION["login_attempts"] > 2) {
+              $_SESSION["locked"] = time(); 
+              echo 'You have failed to login 3 times. Wait ten minutes and think about your password.';
+            } else {
+              echo "<button type='submit' name='submit'>LOGIN IN</button>" ;
             }
               ?>
+              
 
-               <button type="submit" name="submit">Login in</button>
+              
               <?php 
 // to display error messages
 if(isset($_GET['error'])) {
 
 if ($_GET['error']== 'emptyinput') {
-echo "<p>Please fill in all fields</p>";
+echo "<p class='errMessage' >Please fill in all fields</p>";
 }
 
 else if ($_GET['error']=='wronglogin'){
-  echo "<p>Incorrect Details</p>";
+  echo "<p class='errMessage' >Incorrect Details</p>";
 }
 
 else if ($_GET['error']=='none'){

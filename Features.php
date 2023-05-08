@@ -39,42 +39,6 @@
                 nulla aliquid.
               </p>
             </div>
-            <div class="feature">
-              <i class="fa-solid fa-person-chalkboard"></i>
-              <h4>Climbing Instructors</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                magni eligendi minus aliquam similique! Blanditiis sint sed ut
-                nulla aliquid.
-              </p>
-            </div>
-            <div class="feature">
-              <i class="fa-solid fa-car-side"></i>
-              <h4>Affordable Rides to the Airport</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                magni eligendi minus aliquam similique! Blanditiis sint sed ut
-                nulla aliquid.
-              </p>
-            </div>
-            <div class="feature">
-              <i class="fa-solid fa-person-swimming"></i>
-              <h4>Swimming Pool</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                magni eligendi minus aliquam similique! Blanditiis sint sed ut
-                nulla aliquid.
-              </p>
-            </div>
-            <div class="feature">
-              <i class="fa-solid fa-fire-flame-curved"></i>
-              <h4>Bonfires</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                magni eligendi minus aliquam similique! Blanditiis sint sed ut
-                nulla aliquid.
-              </p>
-            </div>
                <div class="feature">
               <i class="fa-solid fa-bicycle"></i>
               <h4>Mountain Bike Hire</h4>
@@ -102,17 +66,17 @@
 <div class="camp-rules">
     <ul class="rules-list">
       <i class="fa-solid fa-scroll"></i>
-      <li>No Fornication and No Adultery</li>
-      <li>No Fornication and No Adultery</li>
-      <li>No Fornication and No Adultery</li>
-      <li>No Fornication and No Adultery</li>
+      <li>No Drugs</li>
+      <li>Do Firearms</li>
+      <li>Respect Other Camper's Privacy</li>
+      <li>Do Not Destroy Camping Property</li>
     </ul>
     <ul class="rules-list">
       <i class="fa-solid fa-clipboard-list"></i>
-        <li>No Fornication and No Adultery</li>
-        <li>No Fornication and No Adultery</li>
-        <li>No Fornication and No Adultery</li>
-        <li>No Fornication and No Adultery</li>
+        <li>No Swimming Past 20:00Hrs</li>
+        <li>No Liquor Allowed On Camp Premises</li>
+        <li>Do Not Litter On Camp Property</li>
+        <li>Report Any Lost Property</li>
     </ul>
 </div>
         </div>

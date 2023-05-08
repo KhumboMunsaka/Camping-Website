@@ -82,6 +82,8 @@ function emptyInputLogin ($email,$password) {
         $emailExists = emailExists($conn, $email);
         
         if ($emailExists === false) {
+            session_start();
+            $_SESSION["login_attempts"] += 1;
              header('location: ../sign-in.php?error=wronglogin');
         exit();
         }
@@ -90,6 +92,8 @@ function emptyInputLogin ($email,$password) {
         $checkpwd = password_verify($pwd, $pwdHashed);
 
         if ($checkpwd === false) {
+            session_start();
+            $_SESSION["login_attempts"] += 1;
               header('location: ../sign-in.php?error=wronglogin');
               exit();
         } else if ($checkpwd === true) {
