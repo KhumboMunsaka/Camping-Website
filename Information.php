@@ -40,7 +40,7 @@ if(isset($message)){
         <form action="" method="POST" >  
             <div class="pitch-type">    
                 <div class="pitch-type-img pitch-one">
-                    <img src="<?php echo $item['image_link']?>" alt="image of a lake">
+                    <img src="<?php echo $item['image_link']?>" alt="image of a pitch">
                 </div>
                 <div class="pitch-type-details">
                     <input type="hidden" name="Pitch_name" value="<?php echo $item['Pitch_name'] ?>">

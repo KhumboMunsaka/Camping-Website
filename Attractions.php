@@ -45,7 +45,7 @@ if(isset($_POST['book_swim'])) {
                 <div class="pitch-type-details">
                     <input type="hidden" name="lake_name" value="<?php echo $item['lake_name'] ?>">
                     <?php 
-                     echo $item['description'];
+                     echo $item['Description'];
                     if (isset($_SESSION['UserID']) || isset($_SESSION['email'])) {
                         echo '
                         <p class="booking-instruction" >Set a date you would like to book</p>

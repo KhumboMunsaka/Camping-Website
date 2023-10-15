@@ -39,7 +39,7 @@ include 'includes/dbh.inc.php';
           <li><a class="invisible-items" href="Pitch-types.php">SEARCH AVAILABILITY</a></li>
           <li><a class="invisible-items" href="Attractions.php">ATTRACTIONS</a></li>
           <?php
-          if (isset($_SESSION['UserID'])) {
+          if (isset($_SESSION['email'])) {
            echo '<li><a class="invisible-items" href="includes/logout.inc.php">SIGN-OUT</a></li>';
            echo '<li><a class="invisible-items" href="profile.php">PROFILE</a></li>';
           } else {
